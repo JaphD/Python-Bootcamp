@@ -73,7 +73,7 @@ def player_2_position():
 
 
 def display_board():
-    print('\n' * 5)
+    print(f'\n'*3)
     print(f"   |   |   \n {test_board[6]} | {test_board[7]} | {test_board[8]}\n   |   |   ")
     print(f"-----------  ")
     print(f"   |   |   \n {test_board[3]} | {test_board[4]} | {test_board[5]}\n   |   |   ")
@@ -132,9 +132,25 @@ while turn < 9:
         display_board()
         next_turn = 'two'
         turn += 1
+        if (test_board[0] == test_board[1] == test_board[2] == player_token[0] or test_board[2] == test_board[5] ==
+            test_board[8] == player_token[0] or test_board[6] == test_board[7] == test_board[8] == player_token[0] or
+            test_board[0] == test_board[3] == test_board[6] == player_token[0] or test_board[2] == test_board[4] ==
+            test_board[6] == player_token[0]) or test_board[0] == test_board[4] == test_board[8] == player_token[0] or \
+                test_board[3] == test_board[4] == test_board[5] == player_token[0] or test_board[1] == test_board[4] == \
+                test_board[7] == player_token[0]:
+            print(f"Congrats! You have won the game. You were able to conquer '{player_token[1]}' in {turn} turns.")
+            break
     else:
         player_2_position()
         update_display()
         display_board()
         next_turn = 'one'
         turn += 1
+        if (test_board[0] == test_board[1] == test_board[2] == player_token[0] or test_board[2] == test_board[5] ==
+            test_board[8] == player_token[0] or test_board[6] == test_board[7] == test_board[8] == player_token[0] or
+            test_board[0] == test_board[3] == test_board[6] == player_token[0] or test_board[2] == test_board[4] ==
+            test_board[6] == player_token[0]) or test_board[0] == test_board[4] == test_board[8] == player_token[0] or \
+                test_board[3] == test_board[4] == test_board[5] == player_token[0] or test_board[1] == test_board[4] == \
+                test_board[7] == player_token[0]:
+            print(f"Congrats! You have won the game. You were able to conquer '{player_token[1]}' in {turn} turns.")
+            break
