@@ -52,8 +52,12 @@ def game_start():
 
 def player_1_position():
     global player_one_position
+    player_one_choice = 0
 
-    player_one_choice = int(input('Choose your next position: (1-9) '))
+    while player_one_choice not in range(1,10):
+        player_one_choice = int(input('Player One - Choose your next position: (1-9) '))
+        if player_one_choice not in range(1,10):
+            print(f'Please input a number between 1 and 9')
 
     for i in range(0, player_one_choice + 1):
         player_one_position = player_one_choice - 1
@@ -63,8 +67,12 @@ def player_1_position():
 
 def player_2_position():
     global player_two_position
+    player_two_choice = 0
 
-    player_two_choice = int(input('Choose your next position: (1-9) '))
+    while player_two_choice not in range(1,10):
+        player_two_choice = int(input('Player Two - Choose your next position: (1-9) '))
+        if player_two_choice not in range(1,10):
+            print(f'Please input a number between 1 and 9')
 
     for i in range(0, player_two_choice + 1):
         player_two_position = player_two_choice - 1
@@ -138,7 +146,7 @@ while turn < 9:
             test_board[6] == player_token[0]) or test_board[0] == test_board[4] == test_board[8] == player_token[0] or \
                 test_board[3] == test_board[4] == test_board[5] == player_token[0] or test_board[1] == test_board[4] == \
                 test_board[7] == player_token[0]:
-            print(f"Congrats! You have won the game. You were able to conquer '{player_token[1]}' in {turn} turns.")
+            print(f"Congrats! You have won the game. You defeated Player Two in {turn} turns.")
             break
     else:
         player_2_position()
@@ -152,5 +160,5 @@ while turn < 9:
             test_board[6] == player_token[0]) or test_board[0] == test_board[4] == test_board[8] == player_token[0] or \
                 test_board[3] == test_board[4] == test_board[5] == player_token[0] or test_board[1] == test_board[4] == \
                 test_board[7] == player_token[0]:
-            print(f"Congrats! You have won the game. You were able to conquer '{player_token[1]}' in {turn} turns.")
+            print(f"Congrats! You have won the game. You defeated Player One in {turn} turns.")
             break
