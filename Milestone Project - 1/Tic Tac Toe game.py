@@ -11,8 +11,6 @@ next_turn = ''
 def player_symbol():
     global player_token
 
-    print(f'Welcome to Tic Tac Toe!')
-
     player_1 = input("Player 1: Do you want to be X or O? ")
     player_1 = player_1.upper()
 
@@ -129,6 +127,8 @@ def game_check():
 
 
 # Bringing everything together
+print(f'Welcome to Tic Tac Toe!')
+
 play_again = ''
 while True:
     player_symbol()
@@ -155,10 +155,13 @@ while True:
             next_turn = 'two'
             turn += 1
             if (test_board[0] == test_board[1] == test_board[2] == player_token[0] or test_board[2] == test_board[5] ==
-                test_board[8] == player_token[0] or test_board[6] == test_board[7] == test_board[8] == player_token[0] or
+                test_board[8] == player_token[0] or test_board[6] == test_board[7] == test_board[8] == player_token[
+                    0] or
                 test_board[0] == test_board[3] == test_board[6] == player_token[0] or test_board[2] == test_board[4] ==
-                test_board[6] == player_token[0]) or test_board[0] == test_board[4] == test_board[8] == player_token[0] or \
-                    test_board[3] == test_board[4] == test_board[5] == player_token[0] or test_board[1] == test_board[4] == \
+                test_board[6] == player_token[0]) or test_board[0] == test_board[4] == test_board[8] == player_token[
+                0] or \
+                    test_board[3] == test_board[4] == test_board[5] == player_token[0] or test_board[1] == test_board[
+                4] == \
                     test_board[7] == player_token[0]:
                 print(f"\nCongrats! You have won the game. You defeated Player Two in {turn} turns.")
                 break
@@ -171,16 +174,20 @@ while True:
             next_turn = 'one'
             turn += 1
             if (test_board[0] == test_board[1] == test_board[2] == player_token[1] or test_board[2] == test_board[5] ==
-                test_board[8] == player_token[1] or test_board[6] == test_board[7] == test_board[8] == player_token[1] or
+                test_board[8] == player_token[1] or test_board[6] == test_board[7] == test_board[8] == player_token[
+                    1] or
                 test_board[0] == test_board[3] == test_board[6] == player_token[1] or test_board[2] == test_board[4] ==
-                test_board[6] == player_token[1]) or test_board[0] == test_board[4] == test_board[8] == player_token[1] or \
-                    test_board[3] == test_board[4] == test_board[5] == player_token[1] or test_board[1] == test_board[4] == \
+                test_board[6] == player_token[1]) or test_board[0] == test_board[4] == test_board[8] == player_token[
+                1] or \
+                    test_board[3] == test_board[4] == test_board[5] == player_token[1] or test_board[1] == test_board[
+                4] == \
                     test_board[7] == player_token[1]:
                 print(f"\nCongrats! You have won the game. You defeated Player One in {turn} turns.")
                 break
 
     game_check()
     play_again = input(f'\nWould you like to play again? Yes/No ')
+    print(f'\n')
     if play_again == 'Yes':
         test_board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
         starting_first = ''
@@ -194,5 +201,3 @@ while True:
     else:
         print(f'\nThanks for playing.')
         break
-
-
