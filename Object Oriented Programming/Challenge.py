@@ -1,6 +1,6 @@
 class Account:
 
-    def __init__(self, owner, balance):
+    def __init__(self, owner, balance=0):
         self.owner = owner
         self.balance = balance
 
@@ -32,6 +32,3 @@ print()
 account1.withdraw(500)
 print()
 account1.withdraw(5000)
-
-
-
