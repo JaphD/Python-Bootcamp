@@ -44,6 +44,20 @@ li.distance()
 
 li.slope()
 
+'''
+A better alternative would be the following for problem one
+    def distance(self):
+        x1, y1 = self.coor1
+        x2, y2 = self.coor2
+        
+        print(((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5)
+
+    def slope(self):
+        x1, y1 = self.coor1
+        x2, y2 = self.coor2
+        
+        print((y2 - y1) / (x2 - x1))   
+'''
 print("\n")
 
 
