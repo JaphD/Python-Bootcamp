@@ -1,5 +1,3 @@
-# CARD
-# SUIT, RANK, VALUE
 import random
 
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
@@ -8,6 +6,8 @@ values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7, 'Eig
           'Jack': 11, 'Queen': 12, 'King': 13, 'Ace': 14}
 
 
+# CARD
+# SUIT, RANK, VALUE
 class Card:
 
     def __init__(self, suit, rank):
@@ -98,7 +98,6 @@ for x in range(26):
     player_one.add_cards(new_deck.deal_one())
     player_two.add_cards(new_deck.deal_one())
 
-
 game_on = True
 round_num = 0
 
@@ -123,8 +122,6 @@ while game_on:
 
     player_two_cards = []
     player_two_cards.append(player_two.remove_one())
-
-
 
     at_war = True
 
@@ -163,7 +160,4 @@ while game_on:
                 for num in range(5):
                     player_one_cards.append(player_one.remove_one())
                     player_two_cards.append(player_two.remove_one())
-
-
-
 
